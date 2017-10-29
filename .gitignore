@@ -1,6 +1,6 @@
 out
 minecraft-spigot-server/logs
-minecraft-spigot-server/plugins
+minecraft-spigot-server/plugins/PluginMetrics
 minecraft-spigot-server/world
 minecraft-spigot-server/world_nether
 minecraft-spigot-server/world_the_end
