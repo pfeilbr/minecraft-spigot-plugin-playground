@@ -17,7 +17,7 @@ public class Main extends JavaPlugin implements Listener {
     @Override
     public void onEnable() {
         super.onEnable();
-        log.info("HELLO MY-SPIGOT-PLUGIN v7");
+        log.info("onEnable : " + this.getDescription().getFullName());
         PluginManager pm = getServer().getPluginManager();
         pm.registerEvents(this, this);
     }
