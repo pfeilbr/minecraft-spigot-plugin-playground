@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="spigot-plugin-playground:jar">
+    <output-path>$USER_HOME$/dev/minecraft-spigot-server/plugins</output-path>
+    <root id="archive" name="spigot-plugin-playground.jar">
+      <element id="module-output" name="spigot-plugin-playground" />
+    </root>
+  </artifact>
+</component>

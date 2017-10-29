@@ -1,0 +1,4 @@
+name: my-spigot-plugin
+version: 0.1.2
+author: Brian Pfeil
+main: com.brianpfeil.bukkit.myplugin.Main
