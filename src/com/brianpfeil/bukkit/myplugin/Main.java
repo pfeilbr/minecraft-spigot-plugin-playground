@@ -24,7 +24,7 @@ public class Main extends JavaPlugin implements Listener {
 
     @EventHandler
     public void onBlockBreak(BlockBreakEvent event) {
-        Bukkit.broadcastMessage("Block break v10");
+        Bukkit.broadcastMessage("Block break v11");
         //event.getPlayer().getInventory().getItemInMainHand().setType(Material.DIAMOND_AXE);
     }
 

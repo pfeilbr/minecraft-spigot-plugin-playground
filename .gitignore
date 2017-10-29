@@ -1,1 +1,9 @@
 out
+minecraft-spigot-server/logs
+minecraft-spigot-server/plugins
+minecraft-spigot-server/world
+minecraft-spigot-server/world_nether
+minecraft-spigot-server/world_the_end
+minecraft-spigot-server/*.json
+minecraft-spigot-server/*.yml
+minecraft-spigot-server/*.properties

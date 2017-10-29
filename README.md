@@ -21,7 +21,7 @@ Remote Debug Configuration
 
 1. launch minecraft server in debug mode
 ```sh
-cd ~/dev/minecraft-spigot-server
+cd ./minecraft-spigot-server
 ./start.command
 # java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005 -jar spigot-1.12.2.jar
 ```
