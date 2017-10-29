@@ -1,3 +1,7 @@
+## minecraft-spigot-plugin-playground
+
+Learn plugin development for the [spigot](https://www.spigotmc.org/) minecraft server.
+
 ## Project Setup and Configuration
 
 see [Creating a blank Spigot plugin in IntelliJIDEA](https://www.spigotmc.org/wiki/creating-a-blank-spigot-plugin-in-intellijidea/)
@@ -13,7 +17,7 @@ Remote Debug Configuration
 
 
 
-## Developing
+## Developing (hot swap/live coding)
 
 1. launch minecraft server in debug mode
 ```sh
