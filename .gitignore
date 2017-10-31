@@ -7,3 +7,6 @@ minecraft-spigot-server/world_the_end
 minecraft-spigot-server/*.json
 minecraft-spigot-server/*.yml
 minecraft-spigot-server/*.properties
+minecraft-spigot-server/crash-reports/crash-2017-10-30_12.12.56-server.txt
+
+minecraft-spigot-server/plugins/spigot-plugin-playground/config.yml

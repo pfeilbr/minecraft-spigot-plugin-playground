@@ -36,6 +36,9 @@ cd ./minecraft-spigot-server
 
 5. Breakpoints will be hit.
 
+    Use Evaluate Code Fragment to explore while debugger is paused
+    ![](https://www.evernote.com/l/AAGy9jk28LxLgaoP2bB-FCd4k4sGHAHOI9UB/image.png)
+
 6. You can edit code, save, and build (cmd-F9).  It'll live apply/hot swap without stopping server.
 
 ## Resources

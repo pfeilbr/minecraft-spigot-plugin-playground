@@ -1,4 +1,9 @@
 name: spigot-plugin-playground
-version: 0.1.4
+version: 0.1.5
 author: Brian Pfeil
 main: com.brianpfeil.bukkit.myplugin.Main
+
+commands:
+  mycmd:
+    description: my command
+    usage: /mycmd
