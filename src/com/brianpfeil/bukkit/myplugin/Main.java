@@ -58,7 +58,7 @@ public class Main extends JavaPlugin implements Listener {
                 if (args.length == 1) {
                     if (args[0].equalsIgnoreCase("toggle_log_all_events")) {
                         RegisteredListener registeredListener = new RegisteredListener(this.plugin, (listener, event) -> {
-                            if (!(event instanceof EntityAirChangeEvent)) {
+                            if (!(event instanceof EntityAirChangeEvent)) { // ignore EntityAirChangeEvent event. fires A LOT
                                 log.info(event.toString());
                             }
                         }, EventPriority.NORMAL, this.plugin, false);
