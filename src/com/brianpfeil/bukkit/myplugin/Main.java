@@ -1,5 +1,9 @@
 package com.brianpfeil.bukkit.myplugin;
 
+import jdk.nashorn.internal.ir.RuntimeNode;
+import org.apache.http.HttpRequest;
+import org.apache.http.client.fluent.Request;
+import org.apache.http.entity.ContentType;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
@@ -22,13 +26,17 @@ import org.bukkit.plugin.RegisteredListener;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.Bukkit;
 
+
+
 import java.util.logging.Logger;
 
 public class Main extends JavaPlugin implements Listener {
 
     // example command
     public class MyCommand implements CommandExecutor {
+
         private Main plugin;
+
         public MyCommand(Main plugin) {
             this.plugin = plugin;
         }
@@ -55,26 +63,35 @@ public class Main extends JavaPlugin implements Listener {
                     }
                 }
 
-                if (args.length == 1) {
-                    if (args[0].equalsIgnoreCase("toggle_log_all_events")) {
-                        RegisteredListener registeredListener = new RegisteredListener(this.plugin, (listener, event) -> {
-                            if (!(event instanceof EntityAirChangeEvent)) { // ignore EntityAirChangeEvent event. fires A LOT
-                                log.info(event.toString());
-                            }
-                        }, EventPriority.NORMAL, this.plugin, false);
-                        for (HandlerList handler : HandlerList.getHandlerLists()) {
-                            handler.register(registeredListener);
-                        }
-                    }
-                }
-
             } else { // command invoked from console
                 log.info("command " + command.getLabel() + " invoked from console and not a player");
             }
 
+            if (args.length == 1) {
+                if (args[0].equalsIgnoreCase("toggle_log_all_events")) {
+                    RegisteredListener registeredListener = new RegisteredListener(this.plugin, (listener, event) -> {
+                        if (!(event instanceof EntityAirChangeEvent)) { // ignore EntityAirChangeEvent event. fires A LOT
+                            log.info(event.toString());
+                            try {
+                                String responseBody = Request.Post("https://httpbin.org/post")
+                                        .bodyString("{\"event\": \"" + event.getEventName() + "\"}", ContentType.APPLICATION_JSON)
+                                        .execute().returnContent()
+                                        .asString();
+                                log.info(responseBody);
+                            } catch (Exception e) {
+                                log.warning(e.toString());
+                            }
+                        }
+                    }, EventPriority.NORMAL, this.plugin, false);
+                    for (HandlerList handler : HandlerList.getHandlerLists()) {
+                        handler.register(registeredListener);
+                    }
+                }
+            }
             return false;
         }
     }
+
 
     private Logger log = this.getLogger();
     FileConfiguration config = getConfig();
